@@ -14,16 +14,9 @@ Vagrant.configure("2") do |config|
   end
 
   # define provisioning for both machines
-  # config.vm.provision :shell, inline: "c:/vagrant/scripts/provision.ps1"
   config.vm.provision :shell, inline: "c:/vagrant/scripts/provision.ps1"
 
-#  config.vm.define :default do |delphi|
-#    delphi.vm.provision :shell, inline: "c:/vagrant/scripts/install_rad_studio.ps1"
-#  end
-
-
-
-  # define provisioning of the development machine
+  # define provisioning for the development machine
   config.vm.define :default do |development|
     development.vm.provision :shell, inline: "c:/vagrant/scripts/provision_development.ps1"
   end
