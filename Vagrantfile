@@ -14,22 +14,14 @@ Vagrant.configure("2") do |config|
   end
 
   # define provisioning for both machines
-  config.vm.provision "shell", inline: <<-SHELL
+  # config.vm.provision :shell, inline: "c:/vagrant/scripts/provision.ps1"
+  config.vm.provision :shell, inline: "c:/vagrant/scripts/provision.ps1"
 
-    # install Windows package manager (Chocolatey)
-    echo "Install Choco if not present"
-    try { choco -v  }
-    Catch {
-      Set-ExecutionPolicy Bypass -Scope Process -Force
+#  config.vm.define :default do |delphi|
+#    delphi.vm.provision :shell, inline: "c:/vagrant/scripts/install_rad_studio.ps1"
+#  end
 
-      # TODO required?
-      [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
-      iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-    }
 
-# TODO include directly?
-
-SHELL
 
   # define provisioning of the development machine
   config.vm.define :default do |development|
@@ -38,6 +30,8 @@ SHELL
 
   # define provisioning of the deployment machine
   config.vm.define :deployment do |deployment|
+
+    # TODO remove PROVISION_OPTS !
     deployment.vm.provision :shell, inline: "c:/vagrant/scripts/provision_deployment.ps1 #{ENV['PROVISION_OPTS']}"
   end
 
