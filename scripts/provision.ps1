@@ -1,25 +1,19 @@
 
-    echo "Run Provision for both machines"
+    echo "scripts/provision.ps1 - Run Provisioning for both machines"
 
     try {
-
-echo "CHRIS: Check 1"
-
-      # install Windows package manager (Chocolatey)
+      echo " Trying to find Chocolatey on the Windows machine"
       choco -v
-
-echo "CHRIS: Check 2"
+      echo " Chocolatey has successfully been detected"
     }
     Catch
     {
       Set-ExecutionPolicy Bypass -Scope Process -Force
 
+      # install Windows package manager (Chocolatey)
+
       # TODO required?
       [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
+
       iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
     }
-
-echo "CHRIS: Check 3"
-
-PROVISION_END
-

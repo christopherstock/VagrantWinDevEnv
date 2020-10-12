@@ -13,6 +13,12 @@ Vagrant.configure("2") do |config|
     deployment.vm.network "private_network", ip: "192.168.62.100"
   end
 
+  # specify VirtualBox configuration
+  config.vm.provider "virtualbox" do |vb|
+    vb.customize ["modifyvm", :id, "--audiomode", "2"]
+    vb.customize ["modifyvm", :id, "--screen mode id", "1"]
+  end
+
   # define provisioning for both machines
   config.vm.provision :shell, inline: "c:/vagrant/scripts/provision.ps1"
 
@@ -23,9 +29,7 @@ Vagrant.configure("2") do |config|
 
   # define provisioning of the deployment machine
   config.vm.define :deployment do |deployment|
-
-    # TODO remove PROVISION_OPTS !
-    deployment.vm.provision :shell, inline: "c:/vagrant/scripts/provision_deployment.ps1 #{ENV['PROVISION_OPTS']}"
+    deployment.vm.provision :shell, inline: "c:/vagrant/scripts/provision_deployment.ps1"
   end
 
 end
