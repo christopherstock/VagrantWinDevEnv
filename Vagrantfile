@@ -8,9 +8,6 @@ Vagrant.configure("2") do |config|
  # define the second machine named "deployment" (for deployment)
   config.vm.define "deployment", autostart: false do |deployment|
     deployment.vm.box = "StefanScherer/windows_10"
-
-    # TODO clarify - mandatory?
-    deployment.vm.network "private_network", ip: "192.168.62.100"
   end
 
   # define provisioning for both machines
