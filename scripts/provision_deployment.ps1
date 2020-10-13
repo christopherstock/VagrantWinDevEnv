@@ -6,4 +6,4 @@
     choco install -y autoit
     choco install -y vscode
 
-    echo "Completed provisioning the deployment machine"
+    echo "Completed provisioning the Deployment machine"

@@ -17,4 +17,4 @@
     # execute the compiled app on the desktop and write all output to a textfile on the desktop
     & "$userPath/Desktop/MyApp.exe" > "$userPath/Desktop/readme.txt"
 
-    echo "Completed deployment on the development machine"
+    echo "Completed deployment on the Development machine"

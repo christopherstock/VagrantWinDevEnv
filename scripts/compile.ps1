@@ -15,4 +15,4 @@
     # invoke the MinGW 64bit c++ compiler
     & g++ "$srcPath/MyApp.cpp" -o "$distPath/MyApp.exe"
 
-    echo "Completed compiling on the development machine"
+    echo "Completed compiling on the Development machine"

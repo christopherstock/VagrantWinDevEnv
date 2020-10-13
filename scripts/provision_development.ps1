@@ -15,4 +15,4 @@
     & cd "$vagrantPath"
     & dir > "$userPath/Desktop/readme.txt"
 
-    echo "Completed provisioning the development machine"
+    echo "Completed provisioning the Development machine"
