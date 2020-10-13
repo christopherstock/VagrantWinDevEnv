@@ -1,12 +1,14 @@
 
+    echo
     echo "scripts/provision.ps1 - Run Provisioning for both machines"
+    echo "=========================================================="
 
     try
     {
         # check if Chocolatey is installed
-        echo " Trying to find Chocolatey on the Windows machine"
+        echo "Trying to find Chocolatey on the Windows machine"
         choco -v
-        echo " Chocolatey has successfully been detected"
+        echo "Chocolatey has successfully been detected"
     }
     Catch
     {
@@ -17,3 +19,5 @@
         echo "Installing Chocolatey right away"
         iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
     }
+
+    echo "Completed provisioning the machine"

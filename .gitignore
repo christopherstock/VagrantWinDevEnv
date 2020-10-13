@@ -2,5 +2,8 @@
 # IntelliJ
 .idea
 
-# Vagrant Dir
+# Vagrant
 .vagrant
+
+# output dir
+dist
