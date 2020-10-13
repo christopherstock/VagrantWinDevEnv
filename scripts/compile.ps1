@@ -1,5 +1,4 @@
 
-    echo
     echo "scripts/compile.ps1 - Compile the App on the Development machine"
     echo "================================================================"
 

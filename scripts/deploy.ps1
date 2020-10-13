@@ -1,5 +1,4 @@
 
-    echo
     echo "scripts/deploy.ps1 - Deploy the App on the Deployment machine"
     echo "============================================================="
 

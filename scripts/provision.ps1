@@ -1,5 +1,4 @@
 
-    echo
     echo "scripts/provision.ps1 - Run Provisioning for both machines"
     echo "=========================================================="
 
