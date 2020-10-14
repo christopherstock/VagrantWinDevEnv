@@ -12,7 +12,7 @@
         & md -path $distPath | Out-Null
     }
 
-    # invoke the MinGW 64bit c++ compiler
+    # invoke the MinGW c++ compiler
     & g++ "$srcPath/MyApp.cpp" -o "$distPath/MyApp.exe"
 
     echo "Completed compiling on the Development machine"
