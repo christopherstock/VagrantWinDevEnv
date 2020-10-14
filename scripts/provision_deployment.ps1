@@ -6,4 +6,8 @@
     choco install -y autoit
     choco install -y vscode
 
+    # create a directory listing of the vagrant synced dir in a readme.txt on the windows desktop
+    & cd "$vagrantPath"
+    & dir > "$userPath/Desktop/deployment-vm.txt"
+
     echo "Completed provisioning the Deployment machine"

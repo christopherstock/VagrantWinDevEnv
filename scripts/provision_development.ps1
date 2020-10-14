@@ -13,6 +13,6 @@
 
     # create a directory listing of the vagrant synced dir in a readme.txt on the windows desktop
     & cd "$vagrantPath"
-    & dir > "$userPath/Desktop/readme.txt"
+    & dir > "$userPath/Desktop/development-vm.txt"
 
     echo "Completed provisioning the Development machine"
