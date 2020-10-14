@@ -6,13 +6,13 @@
     $vagrantPath = "C:/vagrant"
     $userPath = "C:/Users/vagrant"
 
-    # install via Chocolatey: 'Sysinternals', 'VS Code' and the MinGW 64 Bit c++ compiler
+    # install software via Chocolatey
     choco install -y sysinternals
     choco install -y vscode
     choco install -y mingw
 
     # create a directory listing of the vagrant synced dir in a readme.txt on the windows desktop
     & cd "$vagrantPath"
-    & dir > "$userPath/Desktop/development-vm.txt"
+    & dir > "$userPath/Desktop/development.txt"
 
     echo "Completed provisioning the Development machine"
